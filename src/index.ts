@@ -1,9 +1,6 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 
-const canvasWidth = 960;
-const canvasHeight = 600;
-
 function createBackground() {
 	const background = PIXI.Sprite.from("/assets/metal-texture.webp");
 	background.width = settings.canvasWidth;
@@ -21,11 +18,14 @@ async function init() {
 
 function initializeApp() {
 	const app = new PIXI.Application({
-		width: canvasWidth,
-		height: canvasHeight,
+		width: settings.canvasWidth,
+		height: settings.canvasHeight,
 	});
-	document.body.appendChild(app.view);
-	app.view.classList.add("main-canvas");
+
+	const canvas = app.view as HTMLCanvasElement
+
+	document.body.appendChild(canvas);
+	canvas.classList.add("main-canvas");
 	return app;
 }
 
