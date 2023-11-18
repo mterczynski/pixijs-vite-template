@@ -1,11 +1,13 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 
-async function init() {
+export function init() {
 	const app = initializeApp();
 	const background = createBackground();
 
 	app.stage.addChild(background);
+
+	return app
 }
 
 function createBackground() {
