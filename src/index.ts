@@ -1,19 +1,19 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 
+async function init() {
+	const app = initializeApp();
+	const background = createBackground();
+
+	app.stage.addChild(background);
+}
+
 function createBackground() {
 	const background = PIXI.Sprite.from("/assets/metal-texture.webp");
 	background.width = settings.canvasWidth;
 	background.height = settings.canvasHeight;
 
 	return background;
-}
-
-async function init() {
-	const app = initializeApp();
-	const background = createBackground();
-
-	app.stage.addChild(background);
 }
 
 function initializeApp() {

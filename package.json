@@ -4,9 +4,9 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+		"test": "jest"
   },
-  "type": "module",
   "dependencies": {
     "pixi.js": "^7.0.3"
   },
