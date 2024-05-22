@@ -1,8 +1,8 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 
-export function init() {
-	const app = initializeApp();
+export async function init() {
+	const app = await initializeApp();
 	const background = createBackground();
 
 	app.stage.addChild(background);
@@ -18,11 +18,12 @@ function createBackground() {
 	return background;
 }
 
-function initializeApp() {
+async function initializeApp() {
 	const app = new PIXI.Application();
-	app.init({
+	await app.init({
 		width: settings.canvasWidth,
 		height: settings.canvasHeight,
+		view: document.createElement('canvas')
 	});
 
 	const canvas = app.canvas;
