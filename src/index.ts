@@ -19,7 +19,8 @@ function createBackground() {
 }
 
 function initializeApp() {
-	const app = new PIXI.Application({
+	const app = new PIXI.Application();
+	app.init({
 		width: settings.canvasWidth,
 		height: settings.canvasHeight,
 	});
