@@ -25,7 +25,7 @@ function initializeApp() {
 		height: settings.canvasHeight,
 	});
 
-	const canvas = app.view as HTMLCanvasElement
+	const canvas = app.canvas;
 
 	document.body.appendChild(canvas);
 	canvas.classList.add("main-canvas");
