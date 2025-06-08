@@ -1,6 +1,11 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 
+// Allow globalThis.__PIXI_APP__ for Pixi devTools
+declare global {
+  var __PIXI_APP__: PIXI.Application | undefined;
+}
+
 export async function init() {
 	const app = await initializeApp();
 	const background = await createBackground();
@@ -26,6 +31,8 @@ async function initializeApp() {
 		height: settings.canvasHeight,
 		view: document.createElement('canvas')
 	});
+
+	globalThis.__PIXI_APP__ = app;
 
 	const canvas = app.canvas;
 
