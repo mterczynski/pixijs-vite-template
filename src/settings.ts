@@ -1,5 +1,5 @@
 export const settings = {
-	canvasWidth: 960,
-	canvasHeight: 600,
+	canvasWidth: 600,
+	canvasHeight: 800,
+	movementSpeed: 0.4,
 };
-

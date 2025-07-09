@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 import { assetList, AssetLoader } from "./asset-loader";
+import { Player } from "./player";
 
 // Allow globalThis.__PIXI_APP__ for Pixi devTools
 declare global {
@@ -11,15 +12,19 @@ export async function init() {
 	const assetLoader = new AssetLoader();
 	await assetLoader.loadAllAssets();
 	const app = await initializeApp();
-	const background = await createBackground();
+	const background = createBackground();
+	const player = new Player();
+
+	app.ticker.add((delta) => player.update(delta));
 
 	app.stage.addChild(background);
+	app.stage.addChild(player);
 
 	return app;
 }
 
-async function createBackground() {
-	const background = PIXI.Sprite.from(assetList.metalTexture);
+function createBackground() {
+	const background = PIXI.Sprite.from(assetList.background);
 	background.width = settings.canvasWidth;
 	background.height = settings.canvasHeight;
 
