@@ -1,23 +1,25 @@
 import * as PIXI from "pixi.js";
 import { settings } from "./settings";
+import { assetList, AssetLoader } from "./asset-loader";
 
 // Allow globalThis.__PIXI_APP__ for Pixi devTools
 declare global {
-  var __PIXI_APP__: PIXI.Application | undefined;
+	var __PIXI_APP__: PIXI.Application | undefined;
 }
 
 export async function init() {
+	const assetLoader = new AssetLoader();
+	await assetLoader.loadAllAssets();
 	const app = await initializeApp();
 	const background = await createBackground();
 
 	app.stage.addChild(background);
 
-	return app
+	return app;
 }
 
 async function createBackground() {
-	await PIXI.Assets.load("/assets/metal-texture.webp")
-	const background = PIXI.Sprite.from("/assets/metal-texture.webp");
+	const background = PIXI.Sprite.from(assetList.metalTexture);
 	background.width = settings.canvasWidth;
 	background.height = settings.canvasHeight;
 
@@ -29,7 +31,7 @@ async function initializeApp() {
 	await app.init({
 		width: settings.canvasWidth,
 		height: settings.canvasHeight,
-		view: document.createElement('canvas')
+		view: document.createElement("canvas"),
 	});
 
 	globalThis.__PIXI_APP__ = app;
