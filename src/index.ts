@@ -1,8 +1,8 @@
-import * as PIXI from "pixi.js";
-import { settings } from "./settings";
-import { assetList, AssetLoader } from "./asset-loader";
-import { Player } from "./player";
-import { LoadingScreen } from "./loading-screen";
+import * as PIXI from 'pixi.js';
+import { settings } from './settings';
+import { assetList, AssetLoader } from './asset-loader';
+import { Player } from './player';
+import { LoadingScreen } from './loading-screen';
 
 // Allow globalThis.__PIXI_APP__ for Pixi devTools
 declare global {
@@ -40,7 +40,7 @@ async function initializeApp() {
 	await app.init({
 		width: settings.canvasWidth,
 		height: settings.canvasHeight,
-		view: document.createElement("canvas"),
+		view: document.createElement('canvas'),
 	});
 
 	globalThis.__PIXI_APP__ = app;
@@ -48,7 +48,7 @@ async function initializeApp() {
 	const canvas = app.canvas;
 
 	document.body.appendChild(canvas);
-	canvas.classList.add("main-canvas");
+	canvas.classList.add('main-canvas');
 	return app;
 }
 

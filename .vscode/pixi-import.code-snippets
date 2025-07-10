@@ -2,9 +2,7 @@
 	"Import PIXI": {
 		"scope": "typescript",
 		"prefix": "pixi-import",
-		"body": [
-			"import * as PIXI from \"pixi.js\";",
-		],
-		"description": "Add PIXI import"
-	}
+		"body": ["import * as PIXI from \"pixi.js\";"],
+		"description": "Add PIXI import",
+	},
 }

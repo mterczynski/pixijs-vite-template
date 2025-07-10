@@ -1,22 +1,24 @@
 {
-  "name": "pixijs-template",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "test": "jest"
-  },
-  "dependencies": {
-    "pixi.js": "^8.11.0"
-  },
-  "devDependencies": {
-    "jest-extended": "^6.0.0",
-    "jest-raw-loader": "^1.0.1",
-    "@types/jest": "^30.0.0",
-    "jest": "^30.0.4",
-    "ts-jest": "^29.4.0",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.3"
-  }
+	"name": "pixijs-template",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "jest",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"pixi.js": "^8.11.0"
+	},
+	"devDependencies": {
+		"jest-extended": "^6.0.0",
+		"jest-raw-loader": "^1.0.1",
+		"@types/jest": "^30.0.0",
+		"jest": "^30.0.4",
+		"ts-jest": "^29.4.0",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.3",
+		"prettier": "^3.0.0"
+	}
 }

@@ -1,6 +1,6 @@
-import * as PIXI from "pixi.js";
-import { assetList } from "./asset-loader";
-import { settings } from "./settings";
+import * as PIXI from 'pixi.js';
+import { assetList } from './asset-loader';
+import { settings } from './settings';
 
 export class Player extends PIXI.Container {
 	private sprite = PIXI.Sprite.from(assetList.pigButcher);
@@ -14,20 +14,20 @@ export class Player extends PIXI.Container {
 		this.sprite.scale.set(0.15);
 		this.sprite.y = settings.canvasHeight - 150;
 
-		addEventListener("keydown", (e: KeyboardEvent) => {
-			if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
+		addEventListener('keydown', (e: KeyboardEvent) => {
+			if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') {
 				this.rightPressed = true;
-			} else if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
+			} else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') {
 				this.leftPressed = true;
 			}
 		});
 
-		addEventListener("keyup", (e: KeyboardEvent) => {
-			if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
+		addEventListener('keyup', (e: KeyboardEvent) => {
+			if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') {
 				this.rightPressed = false;
 			}
 
-			if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
+			if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') {
 				this.leftPressed = false;
 			}
 		});

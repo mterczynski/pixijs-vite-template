@@ -1,15 +1,15 @@
-import * as PIXI from "pixi.js";
-import { settings } from "./settings";
+import * as PIXI from 'pixi.js';
+import { settings } from './settings';
 
 export class LoadingScreen extends PIXI.Container {
 	private text = new PIXI.Text({
-		text: "loading...",
+		text: 'loading...',
 		style: {
 			fontSize: 65,
-			fontFamily: "Verdana",
-			stroke: "#ffffff",
-			fill: "#ffffff",
-			fontVariant: "small-caps",
+			fontFamily: 'Verdana',
+			stroke: '#ffffff',
+			fill: '#ffffff',
+			fontVariant: 'small-caps',
 		},
 	});
 
