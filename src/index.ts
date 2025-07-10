@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import { settings } from "./settings";
 import { assetList, AssetLoader } from "./asset-loader";
 import { Player } from "./player";
+import { LoadingScreen } from "./loading-screen";
 
 // Allow globalThis.__PIXI_APP__ for Pixi devTools
 declare global {
@@ -9,9 +10,12 @@ declare global {
 }
 
 export async function init() {
+	const loadingScreen = new LoadingScreen();
+	const app = await initializeApp();
+	app.stage.addChild(loadingScreen);
 	const assetLoader = new AssetLoader();
 	await assetLoader.loadAllAssets();
-	const app = await initializeApp();
+	loadingScreen.destroy();
 	const background = createBackground();
 	const player = new Player();
 
